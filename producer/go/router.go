@@ -2,6 +2,7 @@ package producer
 
 import (
 	parser "dsl-compose/libs/go"
+	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
 
@@ -22,14 +23,16 @@ type ParamType struct {
 
 type EntityListener struct {
 	*parser.BaseComposeParserListener
-	flow      EntityFlow
-	ruleNames []string
+	flow       EntityFlow
+	ruleNames  []string
+	tokenNames []string
 }
 
-func NewTreeShapeListener(ruleNames []string) *EntityListener {
+func NewTreeShapeListener(ruleNames []string, tokenNames []string) *EntityListener {
 	return &EntityListener{
-		ruleNames: ruleNames,
-		flow:      EntityFlow{},
+		ruleNames:  ruleNames,
+		tokenNames: tokenNames,
+		flow:       EntityFlow{},
 	}
 }
 
@@ -46,6 +49,11 @@ func (t *EntityListener) EnterEntityCall(ctx *parser.EntityCallContext) {
 	paramList := ctx.ParameterList().(*parser.ParameterListContext)
 	for _, lit := range paramList.AllLiteral() {
 		context := lit.(*parser.LiteralContext)
+
+		payload := context.GetChildren()[0].GetPayload()
+		fmt.Println(payload.(*antlr.CommonToken))
+
+		fmt.Println(t.tokenNames)
 
 		paramType := ParamType{
 			TypeName:  t.ruleNames[context.GetRuleIndex()],
@@ -72,9 +80,7 @@ func Compile(str string) EntityFlow {
 	p.BuildParseTrees = true
 	tree := p.CompilationUnit()
 
-	names := p.GetRuleNames()
-
-	listener := NewTreeShapeListener(names)
+	listener := NewTreeShapeListener(p.GetRuleNames(), p.GetLiteralNames())
 	antlr.ParseTreeWalkerDefault.Walk(listener, tree)
 
 	return listener.Entity()
