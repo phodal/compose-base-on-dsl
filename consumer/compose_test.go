@@ -1,4 +1,4 @@
-package usage
+package consumer
 
 import (
 	"testing"
