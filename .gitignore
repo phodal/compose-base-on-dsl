@@ -16,3 +16,4 @@
 .idea
 gen
 grammar/ComposeLexer.tokens
+**/node_modules/
