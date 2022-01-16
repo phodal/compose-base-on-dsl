@@ -1,4 +1,4 @@
-package _go
+package producer
 
 type Book struct {
 	id    string
