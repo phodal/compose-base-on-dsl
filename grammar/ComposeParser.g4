@@ -7,11 +7,11 @@ options
 }
 
 compilationUnit
-    : entityDecl
+    : entityDecl?
     ;
 
 entityDecl
-    : entityModifier '.' entityCall
+    : entityModifier ('.' entityCall)*
     ;
 
 entityModifier
@@ -21,7 +21,22 @@ entityModifier
     ;
 
 entityCall
-    : identifier ('.' identifier)*
+    : identifier '(' parameterList ')'
     ;
+
+// parameter => string, int, float
+// or JSON string
+parameterList
+    : literal (',' literal)*
+    ;
+
+literal
+	:	IntegerLiteral
+	|	FloatingPointLiteral
+	|	BooleanLiteral
+	|	CharacterLiteral
+	|	StringLiteral
+	|	NullLiteral
+	;
 
 identifier : Identifier;
