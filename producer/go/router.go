@@ -2,7 +2,6 @@ package producer
 
 import (
 	parser "dsl-compose/libs/go"
-	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
 
@@ -13,34 +12,56 @@ type EntityFlow struct {
 
 type CodeCall struct {
 	FunctionName string
-	Parameters   []string
+	Parameters   []ParamType
+}
+
+type ParamType struct {
+	TypeName  string
+	TypeValue string
 }
 
 type EntityListener struct {
 	*parser.BaseComposeParserListener
-	flow EntityFlow
+	flow      EntityFlow
+	ruleNames []string
 }
 
-func NewTreeShapeListener() *EntityListener {
+func NewTreeShapeListener(ruleNames []string) *EntityListener {
 	return &EntityListener{
-		flow: EntityFlow{},
+		ruleNames: ruleNames,
+		flow:      EntityFlow{},
 	}
 }
 
-func (t *EntityListener) EnterEntityModifier(ctx antlr.ParserRuleContext) {
+func (t *EntityListener) EnterEntityModifier(ctx *parser.EntityModifierContext) {
 	t.flow.Entity = ctx.GetText()
-	fmt.Println(ctx.GetText())
+	// todo: handle entity
 }
 
-func (t *EntityListener) EnterEntityCall(ctx antlr.ParserRuleContext) {
-	fmt.Println(ctx.GetText())
+func (t *EntityListener) EnterEntityCall(ctx *parser.EntityCallContext) {
+	call := CodeCall{
+		FunctionName: ctx.Identifier().GetText(),
+	}
+
+	paramList := ctx.ParameterList().(*parser.ParameterListContext)
+	for _, lit := range paramList.AllLiteral() {
+		context := lit.(*parser.LiteralContext)
+
+		paramType := ParamType{
+			TypeName:  t.ruleNames[context.GetRuleIndex()],
+			TypeValue: context.GetText(),
+		}
+		call.Parameters = append(call.Parameters, paramType)
+	}
+
+	t.flow.Calls = append(t.flow.Calls, call)
 }
 
 func (t *EntityListener) Entity() EntityFlow {
 	return t.flow
 }
 
-func compile(str string) EntityFlow {
+func Compile(str string) EntityFlow {
 	input := antlr.NewInputStream(str)
 	lexer := parser.NewComposeLexer(input)
 	stream := antlr.NewCommonTokenStream(lexer, 0)
@@ -51,7 +72,9 @@ func compile(str string) EntityFlow {
 	p.BuildParseTrees = true
 	tree := p.CompilationUnit()
 
-	listener := NewTreeShapeListener()
+	names := p.GetRuleNames()
+
+	listener := NewTreeShapeListener(names)
 	antlr.ParseTreeWalkerDefault.Walk(listener, tree)
 
 	return listener.Entity()
