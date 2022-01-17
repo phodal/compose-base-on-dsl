@@ -25,5 +25,5 @@ func (b *Compose) Target(id string) *Compose {
 }
 
 func (b *Compose) Build() string {
-	return b.builder.String()
+	return "Book." + b.builder.String()
 }

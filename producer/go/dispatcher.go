@@ -11,9 +11,9 @@ func Dispatcher(str string) string {
 		book := NewBook()
 		for _, call := range flow.Calls {
 			switch call.FunctionName {
-			case "Target":
+			case "target":
 				book.Target()
-			case "Source":
+			case "source":
 				book.Source(call.Parameters[0].TypeValue)
 			}
 		}
