@@ -4,6 +4,8 @@ Scene: cross domain
 
 > A DSL as contract for orchestration API.
 
+![Dispatcher](docs/architecture.svg)
+
 ## Usage
 
 Consumer <-> DSL(Protocol) <-> Producer

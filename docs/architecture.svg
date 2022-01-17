@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="610px" height="323px" viewBox="0 0 610 323" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(-1.000000, 0.000000)">
+            <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="149.5" y="0.5" width="220" height="63"></rect>
+            <path id="Line" d="M247.5,71.5 L247.5,94.5 L251.5,94.5 L247,103.5 L242.5,94.5 L246.5,94.5 L246.5,71.5 L247.5,71.5 Z" fill="#979797" fill-rule="nonzero"></path>
+            <path id="Line" d="M267,71.5 L271.5,80.5 L267.5,80.5 L267.5,103.5 L266.5,103.5 L266.5,80.5 L262.5,80.5 L267,71.5 Z" fill="#979797" fill-rule="nonzero"></path>
+            <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="149.5" y="259.5" width="220" height="63"></rect>
+            <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="390.5" y="259.5" width="220" height="63"></rect>
+            <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="388.5" y="0.5" width="220" height="63"></rect>
+            <text id="Internal-DSL-Builder" font-family="HelveticaNeue, Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                <tspan x="158" y="28">Internal DSL Builder</tspan>
+                <tspan x="158" y="51">(Golang)</tspan>
+            </text>
+            <text id="Internal-DSL-Builder" font-family="HelveticaNeue, Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                <tspan x="402" y="28">Internal DSL Builder</tspan>
+                <tspan x="402" y="51">(JavaScript)</tspan>
+            </text>
+            <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="149.5" y="110.5" width="459" height="40"></rect>
+            <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="149.5" y="204.5" width="459" height="40"></rect>
+            <text id="Consumer" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                <tspan x="0" y="41">Consumer</tspan>
+            </text>
+            <text id="DSL" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                <tspan x="0" y="140">DSL</tspan>
+            </text>
+            <text id="Producer" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                <tspan x="0" y="239">Producer</tspan>
+            </text>
+            <text id="string" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                <tspan x="167" y="95">string</tspan>
+            </text>
+            <text id="json" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                <tspan x="287" y="96">json</tspan>
+            </text>
+            <text id="Parser(Antlr)" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                <tspan x="314" y="234">Parser(Antlr)</tspan>
+            </text>
+            <text id="API" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                <tspan x="352" y="140">API</tspan>
+            </text>
+            <text id="Dispatcher" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                <tspan x="438" y="300">Dispatcher</tspan>
+            </text>
+            <text id="Dispatcher" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                <tspan x="201" y="300">Dispatcher</tspan>
+            </text>
+            <path id="Line" d="M496.5,71 L496.5,94 L500.5,94 L496,103 L491.5,94 L495.5,94 L495.5,71 L496.5,71 Z" fill="#979797" fill-rule="nonzero"></path>
+            <path id="Line" d="M516,71 L520.5,80 L516.5,80 L516.5,103 L515.5,103 L515.5,80 L511.5,80 L516,71 Z" fill="#979797" fill-rule="nonzero"></path>
+            <text id="string" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                <tspan x="416" y="94.5">string</tspan>
+            </text>
+            <text id="json" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                <tspan x="536" y="95.5">json</tspan>
+            </text>
+            <path id="Line" d="M247.5,154 L247.5,177 L251.5,177 L247,186 L242.5,177 L246.5,177 L246.5,154 L247.5,154 Z" fill="#979797" fill-rule="nonzero"></path>
+            <path id="Line" d="M267,154 L271.5,163 L267.5,163 L267.5,186 L266.5,186 L266.5,163 L262.5,163 L267,154 Z" fill="#979797" fill-rule="nonzero"></path>
+            <text id="string" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                <tspan x="167" y="177.5">string</tspan>
+            </text>
+            <text id="json" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                <tspan x="287" y="178.5">json</tspan>
+            </text>
+            <path id="Line" d="M494.5,154 L494.5,177 L498.5,177 L494,186 L489.5,177 L493.5,177 L493.5,154 L494.5,154 Z" fill="#979797" fill-rule="nonzero"></path>
+            <path id="Line" d="M514,154 L518.5,163 L514.5,163 L514.5,186 L513.5,186 L513.5,163 L509.5,163 L514,154 Z" fill="#979797" fill-rule="nonzero"></path>
+            <text id="string" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                <tspan x="414" y="177.5">string</tspan>
+            </text>
+            <text id="json" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" fill="#000000">
+                <tspan x="534" y="178.5">json</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
