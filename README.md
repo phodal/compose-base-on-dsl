@@ -31,7 +31,7 @@ output: generate string
 
 see in [consumer.go](consumer/consumer.go)
 
-```in
+```go
 func (b *Compose) Source(id string) *Compose {
 	source := "source(" + id + ")"
 	b.builder.WriteString(source)
