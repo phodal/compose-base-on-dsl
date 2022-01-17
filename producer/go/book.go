@@ -1,9 +1,9 @@
 package producer
 
 type Book struct {
-	id    string
-	title string
-	name  string
+	Id    string
+	Title string
+	Name  string
 }
 
 func NewBook() *Book {
@@ -11,13 +11,13 @@ func NewBook() *Book {
 }
 
 func (b *Book) Source(id string) *Book {
-	return &Book{
-		id:    id,
-		title: "demo",
-		name:  "hello",
-	}
+	b.Id = id
+	b.Title = "title"
+	b.Name = "hello"
+
+	return b
 }
 
-func (b *Book) Target(id string) string {
-	return b.title
+func (b *Book) Target() string {
+	return b.Title
 }
