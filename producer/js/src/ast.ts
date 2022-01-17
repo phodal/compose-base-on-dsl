@@ -97,7 +97,7 @@ class ComposeListener implements ComposeParserListener {
     }
 }
 
-function Compile(str: string) {
+export function Compile(str: string) {
     let inputStream = new ANTLRInputStream(str);
     let lexer = new ComposeLexer(inputStream);
     let tokenStream = new CommonTokenStream(lexer);
@@ -109,5 +109,3 @@ function Compile(str: string) {
 
     return listener.entity
 }
-
-console.log(JSON.stringify(Compile("Book.Source(12).Target(12)")))
