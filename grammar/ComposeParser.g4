@@ -15,9 +15,7 @@ entityDecl
     ;
 
 entityModifier
-    : 'Book'
-    | 'Note'
-    | 'Paper'
+    : StringLiteral
     ;
 
 entityCall

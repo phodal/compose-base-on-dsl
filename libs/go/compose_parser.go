@@ -21,19 +21,19 @@ var parserATN = []uint16{
 	8, 9, 8, 3, 2, 5, 2, 18, 10, 2, 3, 3, 3, 3, 3, 3, 7, 3, 23, 10, 3, 12,
 	3, 14, 3, 26, 11, 3, 3, 4, 3, 4, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 6, 3,
 	6, 3, 6, 7, 6, 38, 10, 6, 12, 6, 14, 6, 41, 11, 6, 3, 7, 3, 7, 3, 8, 3,
-	8, 3, 8, 2, 2, 9, 2, 4, 6, 8, 10, 12, 14, 2, 4, 3, 2, 12, 14, 3, 2, 16,
-	21, 2, 42, 2, 17, 3, 2, 2, 2, 4, 19, 3, 2, 2, 2, 6, 27, 3, 2, 2, 2, 8,
-	29, 3, 2, 2, 2, 10, 34, 3, 2, 2, 2, 12, 42, 3, 2, 2, 2, 14, 44, 3, 2, 2,
-	2, 16, 18, 5, 4, 3, 2, 17, 16, 3, 2, 2, 2, 17, 18, 3, 2, 2, 2, 18, 3, 3,
-	2, 2, 2, 19, 24, 5, 6, 4, 2, 20, 21, 7, 11, 2, 2, 21, 23, 5, 8, 5, 2, 22,
-	20, 3, 2, 2, 2, 23, 26, 3, 2, 2, 2, 24, 22, 3, 2, 2, 2, 24, 25, 3, 2, 2,
-	2, 25, 5, 3, 2, 2, 2, 26, 24, 3, 2, 2, 2, 27, 28, 9, 2, 2, 2, 28, 7, 3,
-	2, 2, 2, 29, 30, 5, 14, 8, 2, 30, 31, 7, 3, 2, 2, 31, 32, 5, 10, 6, 2,
-	32, 33, 7, 4, 2, 2, 33, 9, 3, 2, 2, 2, 34, 39, 5, 12, 7, 2, 35, 36, 7,
-	10, 2, 2, 36, 38, 5, 12, 7, 2, 37, 35, 3, 2, 2, 2, 38, 41, 3, 2, 2, 2,
-	39, 37, 3, 2, 2, 2, 39, 40, 3, 2, 2, 2, 40, 11, 3, 2, 2, 2, 41, 39, 3,
-	2, 2, 2, 42, 43, 9, 3, 2, 2, 43, 13, 3, 2, 2, 2, 44, 45, 7, 15, 2, 2, 45,
-	15, 3, 2, 2, 2, 5, 17, 24, 39,
+	8, 3, 8, 2, 2, 9, 2, 4, 6, 8, 10, 12, 14, 2, 3, 3, 2, 16, 21, 2, 42, 2,
+	17, 3, 2, 2, 2, 4, 19, 3, 2, 2, 2, 6, 27, 3, 2, 2, 2, 8, 29, 3, 2, 2, 2,
+	10, 34, 3, 2, 2, 2, 12, 42, 3, 2, 2, 2, 14, 44, 3, 2, 2, 2, 16, 18, 5,
+	4, 3, 2, 17, 16, 3, 2, 2, 2, 17, 18, 3, 2, 2, 2, 18, 3, 3, 2, 2, 2, 19,
+	24, 5, 6, 4, 2, 20, 21, 7, 11, 2, 2, 21, 23, 5, 8, 5, 2, 22, 20, 3, 2,
+	2, 2, 23, 26, 3, 2, 2, 2, 24, 22, 3, 2, 2, 2, 24, 25, 3, 2, 2, 2, 25, 5,
+	3, 2, 2, 2, 26, 24, 3, 2, 2, 2, 27, 28, 7, 20, 2, 2, 28, 7, 3, 2, 2, 2,
+	29, 30, 5, 14, 8, 2, 30, 31, 7, 3, 2, 2, 31, 32, 5, 10, 6, 2, 32, 33, 7,
+	4, 2, 2, 33, 9, 3, 2, 2, 2, 34, 39, 5, 12, 7, 2, 35, 36, 7, 10, 2, 2, 36,
+	38, 5, 12, 7, 2, 37, 35, 3, 2, 2, 2, 38, 41, 3, 2, 2, 2, 39, 37, 3, 2,
+	2, 2, 39, 40, 3, 2, 2, 2, 40, 11, 3, 2, 2, 2, 41, 39, 3, 2, 2, 2, 42, 43,
+	9, 2, 2, 2, 43, 13, 3, 2, 2, 2, 44, 45, 7, 15, 2, 2, 45, 15, 3, 2, 2, 2,
+	5, 17, 24, 39,
 }
 var literalNames = []string{
 	"", "'('", "')'", "'{'", "'}'", "'['", "']'", "';'", "','", "'.'", "'Book'",
@@ -215,7 +215,7 @@ func (p *ComposeParser) CompilationUnit() (localctx ICompilationUnitContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<ComposeParserBook)|(1<<ComposeParserNote)|(1<<ComposeParserPaser))) != 0 {
+	if _la == ComposeParserStringLiteral {
 		{
 			p.SetState(14)
 			p.EntityDecl()
@@ -414,16 +414,8 @@ func NewEntityModifierContext(parser antlr.Parser, parent antlr.ParserRuleContex
 
 func (s *EntityModifierContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *EntityModifierContext) Book() antlr.TerminalNode {
-	return s.GetToken(ComposeParserBook, 0)
-}
-
-func (s *EntityModifierContext) Note() antlr.TerminalNode {
-	return s.GetToken(ComposeParserNote, 0)
-}
-
-func (s *EntityModifierContext) Paser() antlr.TerminalNode {
-	return s.GetToken(ComposeParserPaser, 0)
+func (s *EntityModifierContext) StringLiteral() antlr.TerminalNode {
+	return s.GetToken(ComposeParserStringLiteral, 0)
 }
 
 func (s *EntityModifierContext) GetRuleContext() antlr.RuleContext {
@@ -452,7 +444,6 @@ func (p *ComposeParser) EntityModifier() (localctx IEntityModifierContext) {
 
 	localctx = NewEntityModifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, ComposeParserRULE_entityModifier)
-	var _la int
 
 	defer func() {
 		p.ExitRule()
@@ -473,14 +464,7 @@ func (p *ComposeParser) EntityModifier() (localctx IEntityModifierContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(25)
-		_la = p.GetTokenStream().LA(1)
-
-		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<ComposeParserBook)|(1<<ComposeParserNote)|(1<<ComposeParserPaser))) != 0) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
-		}
+		p.Match(ComposeParserStringLiteral)
 	}
 
 	return localctx
