@@ -9,6 +9,6 @@ build({
     platform: 'node',
     format: 'cjs',
     external: [],
-    watch: false,
+    watch: true,
 })
 

@@ -37,7 +37,6 @@ func NewTreeShapeListener(ruleNames []string, symbolicNames []string) *EntityLis
 
 func (t *EntityListener) EnterEntityModifier(ctx *parser.EntityModifierContext) {
 	t.flow.Entity = ctx.GetText()
-	// todo: handle entity
 }
 
 func (t *EntityListener) EnterEntityCall(ctx *parser.EntityCallContext) {
